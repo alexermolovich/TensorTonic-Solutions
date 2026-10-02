@@ -6,7 +6,7 @@ __global__ void swish_kernel(const float* input, float* output, int N) {
 
     if (idx < N) {
         float x = input[idx]; // Read once into a register
-        output[idx] = x / (1.0f + expf(-x));
+        output[idx] = x / (1.0f + __expf(-x));
     }
 }
 
